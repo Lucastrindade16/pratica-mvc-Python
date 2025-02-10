@@ -4,8 +4,4 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_word():
-    return render_template("agenda.html")
-
-@app.route("/")
-def const():
-    return render_template("listaTarefas")
+    return render_template('agenda.html', title='Adicionar Tarefa')
