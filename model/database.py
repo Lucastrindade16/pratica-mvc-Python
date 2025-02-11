@@ -43,7 +43,7 @@ class Database: #Declarando variaveis para a class
     def executar(self, sql, params=None):
         """Executa uma instrução no banco de dados."""
         if self.connection is None and self.cursor is None:
-            print('Conexão as badp de dados não estabelecida!')
+            print('Conexão ao banco de dados não estabelecida!')
             return None
         
         try:
