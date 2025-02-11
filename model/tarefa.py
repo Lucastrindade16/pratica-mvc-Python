@@ -1,4 +1,7 @@
-from model.database import Database
+from typing import self
+#from model.database import Database
+
+from database import Database
 
 class Tarefa:
     def __init__(self, id,  titulo, data_conclusao): #método construtor
@@ -27,7 +30,17 @@ class Tarefa:
         db.desconectar()
         return tarefas if tarefas else []
     
-        if tarefas:
-            return tarefas
-        else:
-            return
+    def apagarTarefa():
+        """Apagar uma tarefa cadastrada no bando de dados."""
+        db = Database()
+        db.conectar()
+
+        sql = 'DELETE FROM tarefa WHERE id = %s'
+        params = self.id # Precisa passar a tupla? (a, b, c, ...) SIM!
+
+        db.executar(sql, params)
+        db.desconectar()
+
+# Área 51
+tarefa = Tarefa(1, 'Teste de tarefa', None)
+print(tarefa)
